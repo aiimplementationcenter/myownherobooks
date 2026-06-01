@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     const { name, age, style, themes, story, email, photoUrls, orderNumber } = body
 
     const paymentIntent = await getStripe().paymentIntents.create({
-      amount: 11900, // $119.00 in cents
+      amount: 9900, // $99.00 in cents
       currency: 'usd',
       receipt_email: email,
       metadata: {
