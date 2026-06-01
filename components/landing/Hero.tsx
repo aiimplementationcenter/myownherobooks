@@ -20,8 +20,8 @@ export default function Hero({ onStart }: { onStart: () => void }) {
             <Stars size={15} /> <span style={{ color: 'var(--navy)' }}>Loved by 12,000+ families</span>
           </div>
           <h1>
-            <span className="ln">They imagine.</span>
-            <span className="ln">We bring them <span className="h-red">to life.</span></span>
+            <span className="ln">Your child, the hero —</span>
+            <span className="ln">in a book made <span className="h-red">just for them.</span></span>
           </h1>
           <p className="hero-sub">A personalized storybook where your child is the hero — in their favorite illustration style, written for their exact reading level.</p>
           <div className="hero-cta">
