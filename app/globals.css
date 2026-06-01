@@ -443,6 +443,28 @@ a { color: inherit; text-decoration: none; }
 .rev-stars { display: flex; gap: 3px; }
 .rev-text { color: #4a5580; font-size: 15px; font-weight: 600; line-height: 1.75; margin: 0; font-style: italic; }
 @media (max-width: 600px) { .reviews-grid { grid-template-columns: 1fr; } }
+.leave-review-section { margin-bottom: 40px; }
+.leave-review-btn { display: inline-flex; align-items: center; gap: 8px; }
+.review-submitted { display: flex; align-items: center; gap: 8px; background: #edfff5; color: #1a7a4a; font-weight: 800; font-size: 14px; padding: 12px 18px; border-radius: 12px; margin-bottom: 16px; }
+.review-form-card { background: #fff; border-radius: var(--r-lg); padding: 32px; box-shadow: var(--shadow); }
+.review-form-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.review-form-header h3 { font-family: var(--display); font-size: 22px; font-weight: 800; color: var(--navy); margin: 0; }
+.review-form { display: flex; flex-direction: column; gap: 16px; }
+.review-form-actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 4px; }
+.star-picker { display: flex; align-items: center; gap: 4px; padding: 8px 0; }
+.star-btn { background: none; border: none; cursor: pointer; padding: 2px; color: #d4c9b8; transition: color .15s, transform .12s; line-height: 0; }
+.star-btn.lit { color: #F7B41C; }
+.star-btn:hover { transform: scale(1.2); }
+.star-label { font-weight: 800; font-size: 13px; color: var(--navy); margin-left: 8px; }
+.reviews-loading { text-align: center; padding: 60px 0; color: #9aa3c8; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.story-cta .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; }
+@media (max-width: 480px) {
+  .story-cta { padding: 40px 24px; }
+  .story-cta h3 { font-size: 22px; }
+  .story-cta .btn { width: 100%; justify-content: center; }
+  .review-form-actions { flex-direction: column-reverse; }
+  .review-form-actions .btn { width: 100%; justify-content: center; }
+}
 
 /* ── Contact page ──────────────────────────────── */
 .contact-wrap { max-width: 960px; margin: 0 auto; }
