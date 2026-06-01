@@ -67,10 +67,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="contact-email-box">
-              <Icon name="pen" size={16} />
-              <span>hello@myownherobooks.com</span>
-            </div>
           </div>
 
           {/* Right — form */}
