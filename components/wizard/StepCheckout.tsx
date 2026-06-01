@@ -56,6 +56,10 @@ function CheckoutForm({ email, setEmail, orderNumber, onSuccess }: FormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!stripe || !elements) return
+    if (!email.trim()) {
+      setError('Please enter your email address.')
+      return
+    }
     setSubmitting(true)
     setError(null)
 

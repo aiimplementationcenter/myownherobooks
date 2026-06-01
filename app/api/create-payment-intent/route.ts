@@ -9,7 +9,8 @@ export async function POST(req: NextRequest) {
     const paymentIntent = await getStripe().paymentIntents.create({
       amount: 9900, // $99.00 in cents
       currency: 'usd',
-      receipt_email: email,
+      // receipt_email set on confirmPayment once user types it in checkout
+      ...(email ? { receipt_email: email } : {}),
       metadata: {
         orderNumber,
         customerName: name,
