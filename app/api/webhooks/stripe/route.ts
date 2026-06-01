@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getStripe } from '@/lib/stripe'
-import { Resend } from 'resend'
+import { getTransporter } from '@/lib/mailer'
 import Stripe from 'stripe'
 
 export async function POST(req: NextRequest) {
   const body = await req.text()
   const sig = req.headers.get('stripe-signature')!
-  const resend = new Resend(process.env.RESEND_API_KEY)
 
   let event: Stripe.Event
   try {
@@ -19,14 +18,16 @@ export async function POST(req: NextRequest) {
   if (event.type === 'payment_intent.succeeded') {
     const pi = event.data.object as Stripe.PaymentIntent
     const m = pi.metadata
+    const mailer = getTransporter()
+    const fromAddress = process.env.SMTP_FROM ?? process.env.SMTP_USER!
 
     const photoList = m.photoUrls
       ? m.photoUrls.split('\n').map((u, i) => `<li><a href="${u}">Photo ${i + 1}</a></li>`).join('')
       : '<li>No photos uploaded</li>'
 
     // Notify business owner
-    await resend.emails.send({
-      from: 'orders@myownherobooks.com',
+    await mailer.sendMail({
+      from: `"My Own Hero Books Orders" <${fromAddress}>`,
       to: process.env.OWNER_EMAIL!,
       subject: `New Order ${m.orderNumber} — ${m.customerName}`,
       html: `
@@ -48,8 +49,8 @@ export async function POST(req: NextRequest) {
 
     // Confirmation to customer
     if (pi.receipt_email) {
-      await resend.emails.send({
-        from: 'hello@myownherobooks.com',
+      await mailer.sendMail({
+        from: `"My Own Hero Books" <${fromAddress}>`,
         to: pi.receipt_email,
         subject: `Your book is being created! Order ${m.orderNumber}`,
         html: `
