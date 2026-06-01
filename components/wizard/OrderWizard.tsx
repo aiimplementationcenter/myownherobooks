@@ -22,6 +22,7 @@ export interface WizardData {
   story: string
   age: number
   email: string
+  coverType: 'hardcover' | 'softcover'
 }
 
 function genOrderNumber() {
@@ -32,7 +33,7 @@ export default function OrderWizard({ onClose }: { onClose: () => void }) {
   const [step, setStep] = useState(0)
   const [done, setDone] = useState(false)
   const [data, setData] = useState<WizardData>({
-    photos: [], style: null, name: '', themes: [], story: '', age: 6, email: '',
+    photos: [], style: null, name: '', themes: [], story: '', age: 6, email: '', coverType: 'hardcover',
   })
   const [clientSecret, setClientSecret] = useState<string | null>(null)
   const [orderNumber] = useState(genOrderNumber)
@@ -85,6 +86,7 @@ export default function OrderWizard({ onClose }: { onClose: () => void }) {
           themes: data.themes,
           story: data.story,
           email: data.email,
+          coverType: data.coverType,
           photoUrls,
         }),
       })

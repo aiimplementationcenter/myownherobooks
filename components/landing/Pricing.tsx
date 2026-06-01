@@ -3,7 +3,7 @@ import Btn from '@/components/ui/Btn'
 
 export default function Pricing({ onStart }: { onStart: () => void }) {
   const feats = [
-    'Personalized 30-page hardcover book',
+    'Personalized 30-page hardcover or softcover book',
     'Your choice of 6 illustration styles',
     'Story written to their reading level',
     'Their name & photo on every spread',

@@ -36,6 +36,7 @@ export async function POST(req: NextRequest) {
           <tr><td style="padding:6px 12px;font-weight:bold">Child's Name</td><td style="padding:6px 12px">${m.customerName}</td></tr>
           <tr><td style="padding:6px 12px;font-weight:bold">Age</td><td style="padding:6px 12px">${m.childAge}</td></tr>
           <tr><td style="padding:6px 12px;font-weight:bold">Style</td><td style="padding:6px 12px">${m.illustrationStyle}</td></tr>
+          <tr><td style="padding:6px 12px;font-weight:bold">Cover</td><td style="padding:6px 12px;text-transform:capitalize">${m.coverType ?? 'hardcover'}</td></tr>
           <tr><td style="padding:6px 12px;font-weight:bold">Themes</td><td style="padding:6px 12px">${m.themes}</td></tr>
           <tr><td style="padding:6px 12px;font-weight:bold">Story Notes</td><td style="padding:6px 12px">${m.storyNotes || '—'}</td></tr>
           <tr><td style="padding:6px 12px;font-weight:bold">Customer Email</td><td style="padding:6px 12px">${pi.receipt_email ?? '—'}</td></tr>

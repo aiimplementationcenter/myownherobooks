@@ -4,7 +4,7 @@ import { getStripe } from '@/lib/stripe'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { name, age, style, themes, story, email, photoUrls, orderNumber } = body
+    const { name, age, style, themes, story, email, coverType, photoUrls, orderNumber } = body
 
     const paymentIntent = await getStripe().paymentIntents.create({
       amount: 9900, // $99.00 in cents
@@ -15,6 +15,7 @@ export async function POST(req: NextRequest) {
         customerName: name,
         childAge: String(age),
         illustrationStyle: style ?? '',
+        coverType: coverType ?? 'hardcover',
         themes: (themes as string[]).join(', '),
         storyNotes: story?.slice(0, 500) ?? '',
         photoUrls: (photoUrls as string[]).join('\n'),
