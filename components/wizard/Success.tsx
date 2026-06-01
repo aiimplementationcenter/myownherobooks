@@ -5,9 +5,9 @@ import Icon from '@/components/ui/Icon'
 import { burst } from '@/lib/burst'
 import type { WizardData } from './OrderWizard'
 
-export default function Success({ data, onClose }: { data: WizardData; onClose: () => void }) {
+export default function Success({ data, onClose, orderNumber }: { data: WizardData; onClose: () => void; orderNumber?: string }) {
   const host = useRef<HTMLDivElement>(null)
-  const [order] = useState(() => 'MOH-' + Math.floor(100000 + Math.random() * 899999))
+  const [order] = useState(() => orderNumber ?? 'MOH-' + Math.floor(100000 + Math.random() * 899999))
   const name = data.name.trim() || 'your little hero'
   useEffect(() => {
     const t = setTimeout(() => burst(host.current, 80), 250)

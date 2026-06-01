@@ -24,6 +24,6 @@ export const READING_TIERS = [
 export const tierFor = (age: number) =>
   READING_TIERS.find((t) => age >= t.min && age <= t.max) ?? READING_TIERS[1]
 
-export const STEP_LABELS = ['Photo', 'Style', 'Story', 'Reader', 'Review']
+export const STEP_LABELS = ['Photo', 'Style', 'Story', 'Reader', 'Review', 'Pay']
 
 export const SAMPLE_PHOTOS = ['/assets/before.png', '/assets/after.png']

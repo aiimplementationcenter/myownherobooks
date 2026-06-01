@@ -15,7 +15,7 @@ export default function StepPhoto({ data, set }: { data: WizardData; set: (p: Pa
 
   const addPhotos = (list: FileList | null) => {
     if (!list) return
-    const incoming = Array.from(list).slice(0, room).map((f) => ({ url: URL.createObjectURL(f), name: f.name }))
+    const incoming = Array.from(list).slice(0, room).map((f) => ({ url: URL.createObjectURL(f), name: f.name, file: f }))
     if (incoming.length) set({ photos: [...photos, ...incoming] })
   }
   const addSample = (s: string) => { if (room > 0) set({ photos: [...photos, { url: s, name: 'sample-photo.png' }] }) }
