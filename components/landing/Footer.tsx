@@ -21,11 +21,11 @@ export default function Footer() {
             <div className="footer-col">
               <h5>Support</h5>
               <a href="#faq">FAQ</a><a href="#">Track my order</a>
-              <a href="#">Contact us</a><a href="#">Gift cards</a>
+              <a href="/contact">Contact us</a><a href="#">Gift cards</a>
             </div>
             <div className="footer-col">
               <h5>Company</h5>
-              <a href="/our-story">Our story</a><a href="#">Reviews</a>
+              <a href="/our-story">Our story</a><a href="/reviews">Reviews</a>
               <a href="/privacy">Privacy Policy</a><a href="/refund">Refund Policy</a>
             </div>
           </div>
