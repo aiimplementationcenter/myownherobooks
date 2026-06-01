@@ -12,7 +12,7 @@ export default function FinalCTA({ onStart }: { onStart: () => void }) {
       <div className="wrap">
         <h2>Their story is waiting to be written.</h2>
         <p>Upload a photo today and hold their adventure in your hands in 7–14 days.</p>
-        <Btn variant="gold" size="lg" icon="wand" onClick={onStart}>Create your book — $119</Btn>
+        <Btn variant="gold" size="lg" icon="wand" onClick={onStart}>Create your book — $99</Btn>
       </div>
     </section>
   )
