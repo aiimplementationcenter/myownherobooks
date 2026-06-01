@@ -20,7 +20,7 @@ export default function Pricing({ onStart }: { onStart: () => void }) {
         <div className="price-card reveal">
           <div className="price-top">
             <span className="ribbon">★ Bestselling gift</span>
-            <div className="price-amt"><sup>$</sup>79<span className="was">$99</span></div>
+            <div className="price-amt"><sup>$</sup>119<span className="was">$149</span></div>
             <p>Everything included — no surprises at checkout.</p>
           </div>
           <div className="price-body">
@@ -29,7 +29,7 @@ export default function Pricing({ onStart }: { onStart: () => void }) {
                 <li key={i}><span className="ck"><Icon name="check" size={15} /></span>{f}</li>
               ))}
             </ul>
-            <Btn variant="gold" size="lg" block icon="wand" onClick={onStart}>Create your book — $79</Btn>
+            <Btn variant="gold" size="lg" block icon="wand" onClick={onStart}>Create your book — $119</Btn>
             <div className="price-guar"><Icon name="shield" size={18} />30-day happiness guarantee</div>
           </div>
         </div>
