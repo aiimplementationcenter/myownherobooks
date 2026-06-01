@@ -1,13 +1,24 @@
 'use client'
+import { useState } from 'react'
 import Icon from '@/components/ui/Icon'
 import { THEMES } from '@/lib/constants'
 import type { WizardData } from './OrderWizard'
 
 export default function StepStory({ data, set }: { data: WizardData; set: (p: Partial<WizardData>) => void }) {
+  const [customTheme, setCustomTheme] = useState('')
+
   const toggle = (t: string) => {
     const has = data.themes.includes(t)
     set({ themes: has ? data.themes.filter((x) => x !== t) : [...data.themes, t] })
   }
+
+  const addCustomTheme = () => {
+    const trimmed = customTheme.trim()
+    if (!trimmed || data.themes.includes(trimmed)) { setCustomTheme(''); return }
+    set({ themes: [...data.themes, trimmed] })
+    setCustomTheme('')
+  }
+
   return (
     <div className="wz-panel">
       <div className="wz-h">
@@ -27,6 +38,30 @@ export default function StepStory({ data, set }: { data: WizardData; set: (p: Pa
               {data.themes.includes(t) && <Icon name="check" size={14} />}{t}
             </button>
           ))}
+          {/* Custom themes added by user */}
+          {data.themes.filter((t) => !THEMES.includes(t as typeof THEMES[number])).map((t) => (
+            <button key={t} className="chip-pick on" onClick={() => toggle(t)}>
+              <Icon name="check" size={14} />{t}
+            </button>
+          ))}
+        </div>
+        <div className="custom-theme-row">
+          <input
+            className="inp custom-theme-inp"
+            placeholder="Your own theme, e.g. Cowboy, Firefighter…"
+            value={customTheme}
+            maxLength={40}
+            onChange={(e) => setCustomTheme(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addCustomTheme())}
+          />
+          <button
+            className="custom-theme-add"
+            onClick={addCustomTheme}
+            disabled={!customTheme.trim()}
+            aria-label="Add custom theme"
+          >
+            <Icon name="plus" size={18} />Add
+          </button>
         </div>
       </div>
       <div className="field">
