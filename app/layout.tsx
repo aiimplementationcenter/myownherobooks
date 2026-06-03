@@ -8,6 +8,9 @@ const nunito = Nunito({ subsets: ['latin'], weight: ['400','600','700','800','90
 export const metadata: Metadata = {
   title: 'My Own Hero Books — Personalized storybooks for kids',
   description: 'A personalized storybook where your child is the hero — in their favorite illustration style, written for their exact reading level.',
+  other: {
+    'p:domain_verify': 'd68ecc087cc7e617de91ac01de72408f',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
