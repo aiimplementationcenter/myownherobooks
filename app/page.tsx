@@ -46,7 +46,7 @@ export default function Home() {
       <FinalCTA onStart={start} />
       <Footer />
       <div className="sticky-cta">
-        <Btn variant="gold" block size="lg" icon="wand" onClick={start}>Create your book — $99</Btn>
+        <Btn variant="gold" block size="lg" icon="wand" onClick={start}>Create your book — $79</Btn>
       </div>
       {ordering && <OrderWizard onClose={() => setOrdering(false)} />}
     </>

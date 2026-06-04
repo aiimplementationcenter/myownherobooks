@@ -204,7 +204,7 @@ export default function ReviewsPage() {
           <p>Join thousands of families who&apos;ve already made their child the hero.</p>
           <Link href="/">
             <button className="btn btn-gold btn-lg">
-              <Icon name="wand" size={18} /> Create your book — $99
+              <Icon name="wand" size={18} /> Create your book — $79
             </button>
           </Link>
         </div>

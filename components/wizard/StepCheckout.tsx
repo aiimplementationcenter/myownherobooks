@@ -115,7 +115,7 @@ function CheckoutForm({ email, setEmail, orderNumber, onSuccess }: FormProps) {
 
       <div className="checkout-summary">
         <span>Personalized storybook</span>
-        <span className="checkout-price">$99.00</span>
+        <span className="checkout-price">$79.00</span>
       </div>
 
       <button
@@ -126,7 +126,7 @@ function CheckoutForm({ email, setEmail, orderNumber, onSuccess }: FormProps) {
         {submitting ? (
           <><Icon name="refresh" size={18} className="spin" /> Processing…</>
         ) : (
-          <><Icon name="wand" size={18} /> Pay $99 &amp; create my book</>
+          <><Icon name="wand" size={18} /> Pay $79 &amp; create my book</>
         )}
       </button>
 

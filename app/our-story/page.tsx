@@ -89,7 +89,7 @@ export default function OurStoryPage() {
           <h3>Ready to make your child the hero?</h3>
           <p>It takes about 5 minutes to set up. We handle everything else.</p>
           <Link href="/" className="btn btn-gold btn-lg story-cta-btn">
-            <Icon name="wand" size={18} /> Create your book — $99
+            <Icon name="wand" size={18} /> Create your book — $79
           </Link>
         </div>
 

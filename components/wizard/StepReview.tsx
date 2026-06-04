@@ -83,7 +83,7 @@ export default function StepReview({ data, set, goTo }: { data: WizardData; set:
       </div>
       <div className="rev-total">
         <span className="rt-k">Your book</span>
-        <span className="rt-v"><small>$149</small>$99</span>
+        <span className="rt-v"><small>$149</small>$79</span>
       </div>
     </div>
   )
